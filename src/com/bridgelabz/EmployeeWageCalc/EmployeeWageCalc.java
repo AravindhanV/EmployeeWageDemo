@@ -11,12 +11,14 @@ public class EmployeeWageCalc {
 		
 		double empCheck = Math.floor(Math.random()*10)%3;
 		int hours=0;
-		if(empCheck == fullTime) {
-			hours = fullTimeHrs;
-		} else if(empCheck == partTime) {
-			hours = fullTimeHrs/2;
-		} else {
-			hours = 0;
+		switch((int)empCheck) {
+		case fullTime: hours = fullTimeHrs;
+		break;
+		
+		case partTime: hours = fullTimeHrs/2;
+		break;
+		
+		case absent: hours = 0;
 		}
 		System.out.println("Daily Wage = "+(hours*wagePerHour));		
 	}
