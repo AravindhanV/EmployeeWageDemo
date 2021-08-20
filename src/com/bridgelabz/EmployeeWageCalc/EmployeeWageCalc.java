@@ -9,17 +9,22 @@ public class EmployeeWageCalc {
 	
 	public static void main(String[] args) {
 		
-		double empCheck = Math.floor(Math.random()*10)%3;
-		int hours=0;
-		switch((int)empCheck) {
-		case fullTime: hours = fullTimeHrs;
-		break;
-		
-		case partTime: hours = fullTimeHrs/2;
-		break;
-		
-		case absent: hours = 0;
+		int totalHrs = 0;
+		int noOfDays = 20;
+		for(int i=0;i<noOfDays;i++) {
+			int hours=0;
+			double empCheck = Math.floor(Math.random()*10)%3;
+			switch((int)empCheck) {
+			case fullTime: hours = fullTimeHrs;
+			break;
+			
+			case partTime: hours = fullTimeHrs/2;
+			break;
+			
+			case absent: hours = 0;
+			}
+			totalHrs += hours;
 		}
-		System.out.println("Daily Wage = "+(hours*wagePerHour));		
+		System.out.println("Monthly Wage = "+(totalHrs*wagePerHour));		
 	}
 }
