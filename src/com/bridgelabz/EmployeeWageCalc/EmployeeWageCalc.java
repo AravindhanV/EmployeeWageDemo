@@ -7,10 +7,11 @@ public class EmployeeWageCalc {
 	public static final int ABSENT = 0;
 	
 	public static void main(String[] args) {
-		calculateWage(20,100,20);
+		calculateWage("Reliance",20,25,10);
+		calculateWage("DMart",15,30,3);
 	}
 	
-	public static void calculateWage(int noOfDays, int maxHrs, int wagePerHour) {
+	public static void calculateWage(String companyName, int wagePerHour, int noOfDays, int maxHrs) {
 		int totalHrs = 0,day=0;		
 		while(totalHrs < maxHrs && day < noOfDays) {
 			int hours=0;
@@ -29,6 +30,6 @@ public class EmployeeWageCalc {
 			System.out.println("Day "+day+": "+hours+" hours");
 		}
 		totalHrs = totalHrs>100 ? 100 : totalHrs;
-		System.out.println("Monthly Wage = "+(totalHrs*wagePerHour));
+		System.out.println("Monthly Wage at "+companyName+" = "+(totalHrs*wagePerHour));
 	}
 }
